@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
 			shareRem.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
+					// this will fail, because there is no configuration option in "file_paths" for the FileProvider
+					// to access this directory
 					ShareCompat.IntentBuilder intentBuilder = ShareCompat.IntentBuilder.from(MainActivity.this);
 					Uri uri = getUriForFile(
 							MainActivity.this, "info.appcube.example", targets[1]);
